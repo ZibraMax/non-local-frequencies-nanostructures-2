@@ -19,7 +19,7 @@ def parse_json(json_str):
         raise ValueError(f"Invalid JSON: {e}") from e
 
 
-FOLDES = ["test_beams"]
+FOLDES = ["mesh_converg"]
 for FOLDER in FOLDES:
     print(f'Parsing {FOLDER}')
     syms = []
@@ -86,7 +86,7 @@ for FOLDER in FOLDES:
                 etas += ['-'] * (n_etas - len(etas))
             etas = ','.join(etas)
             counts = ','.join(counts)
-            link = f"https://zibramax.github.io/FEMViewer/?mesh=https://raw.githubusercontent.com/ZibraMax/non-local-frequencies-nanostructures-2/refs/heads/main/{sym['filename']}&mode=6&magnif=6"
+            link = f"https://zibramax.github.io/FEMViewer/?mesh=https://raw.githubusercontent.com/ZibraMax/non-local-frequencies-nanostructures-2/refs/heads/main/{sym['filename']}&mode=1&magnif=6"
             f.write(
                 f"{rho},{l},{E1},{E2},{G12},{v12},{duration},{name},{material},"
                 f"{R},{z1},{l_R},{ne},{etas},{counts},{link}\n"
